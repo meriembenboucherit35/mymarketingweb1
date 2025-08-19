@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <style>
+     .textbox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+    .textbox h1 {
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+}
+    .textbox h2 {
+    font-size: 1.5rem;
+    color: #666;
+    text-align: center;
+}
+    .textbox h5 {
+    font-size: 1.2rem;
+    color: #999;
+    text-align: center;
+}
+    .textbox button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    .textbox button:hover {
+    background-color: #0056b3;
+}
+    .videobox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+ .videobox video {
+    width: 700px;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+video {
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+    .contentwrapper {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        background: azure;
+        border-radius: 15px;
+        box-shadow:0 15px 30px rgba(0, 0, 0, 0.1)   ;
+        overflow: hidden;
+    }
+    videocontainer {position:relative;
+        width: 100%;
+        max-width: 500px;
+    border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1)  ;
+
+    }
+    .videocontainer video {
+        width: 100%;
+        display:block
+        border-radius: 15px;
+    }
+   shopbtn {
+    display: inline-block;  
+    padding: 10px 20px;
+    font-size: 1rem;    
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+    shopbtn:hover {
+    background-color: #218838;
+}
+    </style>
+</head>
+<body>
+    <div class="contentwrapper">
+    <div class="textbox">
+        <h5> Watery texture cushion</h5>
+        <br>
+        <br>
+        <h1>Moisturizing + Glow</h1>
+        <h1> worth it!</h1>
+        <br>
+        <h2>make your make up glowy and your skin way glowier!
+
+        </h2>
+        <br>
+        <br>
+        <a href="shopbtn" target="_blank"><button>SHOP NOW!!</button></a>
+    </div>
+    <div class="videobox">
+        <div class="videocontainer">
+        <video src="photosof models/video2.mp4" class="video" autoplay loop muted>
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    </div>
+            
+
+    </div>
+</body>
+</html>
