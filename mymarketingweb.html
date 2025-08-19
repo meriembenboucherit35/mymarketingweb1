@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> My Beauty Shop Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link href="mymarkweb.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <header>
+    Free shipping on orders +$30 & <b>Free gift</b> with every purchase! 
+  </header>
+  <nav>
+    <div class="nav-links">
+      <a href="#">All Products</a>
+      <a href="#">Lip</a>
+      <a href="#">Eye</a>
+      <a href="#">Face</a>
+      <a href="#">Outlet</a>
+      <a href="#">Be Our Ambassador</a>
+    </div>
+    <div class="nav-icons">
+      <a href="projet4.html">Account</a>
+      <a href="Search">Search</a>
+      <a href="Cart">Cart</a>
+    </div>
+  </nav>
+
+
+  <div
+    class="banner"
+    style="background-image: url('https://images.unsplassh.com/photo-1519864600265-abb23847ef2c?auto=format&fit=facearea&w=400&h=400&q=80');">
+    <div class="banner-text">
+      <h1>cosmetics</h1>
+      <p>Discover the beauty of asian cosmetics</p>
+    </div>  
+
+  <section class="hero-slider">
+  <div class="slides">
+    <!-- Video Slide -->
+    <div class="slide active">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="video5837213404007241982.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="slide-content">
+        <h1>New Collection Launch</h1>
+        <p>Discover our limited edition summer colors</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+    <!-- Image Slide -->
+    <div class="slide">
+      <div class="hero-img">
+        <img src="photosof models/5837213404463482995.jpg" alt="Hero Image" />
+      </div>
+      <div class="slide-content">
+        <h1>Welcome to My Beauty Shop</h1>
+        <p>Premium Korean cosmetics at your fingertips</p>
+        <a href="#" class="shop-now-btn">Explore</a>
+      </div>
+    </div>
+    <div class="slide active">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="photosof models/lipstick video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="slide-content">
+        <h1>New Collection Launch</h1>
+        <p>Discover our limited edition summer colors</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="slider-controls">
+    <button class="prev-slide">❮</button>
+    <div class="slide-dots"></div>
+    <button class="next-slide">❯</button>
+  </div>
+</section>
+
+  <main>
+    <h2 class="section-title">Featured Products</h2>
+     <div class="products-grid" id="lip-products">
+      <div class="product-card">
+        <img src="photosof models/152c9df2-0926-4d08-b0e1-ed3409e92083.jpg" alt="Lip Product 1"/>
+        <h3>Juicy Lasting Tint</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$12.00</p>
+        <div class="quantity-controls">
+    <button class="quantity-btn minus">-</button>
+    <input type="number" class="quantity-input" value="1" min="1" max="6" />
+    <button class="quantity-btn plus">+</button>
+  </div>
+  
+  <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="photosof models/96847fa6-a77d-4d21-bc8f-5fdef00dc733.jpg"
+        alt="Lip Product 2" />
+        <h3>Glasting Water Tint</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$14.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>  
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+      </div>
+      <div class="product-card">
+        <img src="photosof models/𓍯 Asian Beauty.jpg" alt="Lip Product 3" />
+        <h3>Zero Velvet Tint</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$13.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="videocontainer">
+        <video class="productvideo" src="photosof models/video4.mp4 " \
+        alt="Lip Product 4" autoplay> video is not supported</video>
+        </div>
+        
+        <h3>Romand Lipstick</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$15.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>  
+       
+      <div class="product-card">
+        <img src="photosof models/6.webp" alt="Lip Product 5" />
+        <h3>Romand Lip Balm</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$10.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="photosof models/ROM&ND Juicy Lasting Tint [Bare Juicy Series](4….jpg" alt="Lip Product 6" />
+        <h3>Romand Lip Gloss</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$11.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+       <div class="product-card">
+        <video src="photosof models/video5.mp4" alt="Lip Product 7" controls> video is not supported</video>
+        <h3>Romand Lip Scrub</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$9.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>  
+      </div>
+      <div class="product-card">
+        <img src="photosof models/a0cdf2ff-fbb5-4076-9306-dd5890cb5d52.jpg" alt="Lip Product 8" />
+        <h3>Romand Lip Serum</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$16.00</p> 
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </main>
+   <!-- Bestsellers Slider-->
+<h2 class="section-title">Bestsellers</h2>
+<section class="bestsellers-slider">
+  <div class="bestsellers-slides">
+    <!-- Slide 1 -->
+    <div class="bestsellers-slide active">
+      <div class="bestsellers-img">
+        <img src="photosof models/5839465204277169623.jpg" alt="Bestseller 1" />
+      </div>
+      </div>
+    
+    <!-- Slide2 -->
+    <div class="bestsellers-slide">
+      <div class="bestsellers-img">
+        <img src="photosof models/La vie en rose ❤️.jpg" alt="Bestseller 2" />
+      </div>
+    </div>
+    
+    <!-- Slide3 -->
+    <div class="bestsellers-slide">
+      <div class="bestsellers-img">
+        <img src="photosof models/Makeup and Beauty Products, Makeup Tips, Try On Looks and More _ COVERGIRL® (1).jpg" alt="Bestseller 3" />
+      </div>
+      </div>
+    
+    <!-- Slide4New Slide -->
+    <div class="bestsellers-slide">
+      <div class="bestsellers-img">
+        <img src="photosof models/42071957-92a3-4833-a1ed-5f01402c4a14.jpg" alt="Bestseller 4" />
+      </div>
+      </div>
+    
+    <!-- Slide5 -->
+    <div class="bestsellers-slide">
+      <div class="bestsellers-img">
+        <img src="photosof models/1.webp" alt="Bestseller 5" />
+      </div>
+    </div>
+    
+    <!-- Slide6 -->
+    <div class="bestsellers-slide">
+      <video autoplay muted loop playsinline class="bestsellers-video">
+        <source src="photosof models/lipstick video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="bestsellers-content">
+        <h1>Video Showcase</h1>
+        <p>See our products in action</p>
+        <a href="#" class="shop-now-btn">Watch More</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bestsellers-controls">
+    <button class="bestsellers-prev">❮</button>
+    <div class="bestsellers-dots"></div>
+    <button class="bestsellers-next">❯</button>
+  </div>
+</section>
+
+<main>
+<!--eyes section-->
+    <h2 class="section-title" style="font-size:1.5em;">Eye Makeup</h2>
+    <section class="products-grid" id="eye-products">
+      <div class="product-card">
+        <img src="photosof models/152c9df2-0926-4d08-b0e1-ed3409e92083.jpg" alt="Lip Product 1"/>
+        <h3>Juicy Lasting Tint</h3>
+        <p>$12.00</p>
+      </div>
+      <div class="product-card">
+        <img src="photosof models/96847fa6-a77d-4d21-bc8f-5fdef00dc733.jpg"
+        alt="Lip Product 2" />
+        <h3>Glasting Water Tint</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$14.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="photosof models/𓍯 Asian Beauty.jpg" alt="Lip Product 3" />
+        <h3>Zero Velvet Tint</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$13.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="photosof models/3a78832f-d02a-4e85-b898-2021450f9c49.jpg" alt="Lip Product 4" />
+        <h3>Romand Lipstick</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$15.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>  
+       
+      <div class="product-card">
+        <img src="photosof models/Crème Beauté de la dynastie Joseon - Jar (50ml).jpg" alt="Lip Product 5" />
+        <h3>Romand Lip Balm</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$10.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+      </div>
+      <div class="product-card">
+        <img src="photosof models/ROM&ND Juicy Lasting Tint [Bare Juicy Series](4….jpg" alt="Lip Product 6" />
+        <h3>Romand Lip Gloss</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$11.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+       <div class="product-card">
+        <img src="photosof models/3a78832f-d02a-4e85-b898-2021450f9c49.jpg" alt="Lip Product 7" />
+        <h3>Romand Lip Scrub</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul> 
+        </div>
+        <p>$9.00</p> 
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button> 
+      </div>
+      <div class="product-card">
+        <img src="photosof models/Crème Beauté de la dynastie Joseon - Jar (50ml).jpg" alt="Lip Product 8" />
+        <h3>Romand Lip Serum</h3>
+        <div class="product-choices">
+          <ul>
+            <li id="ch1"></li>
+            <li id="ch2"></li>
+            <li id="ch3"></li>
+          </ul>
+        </div>
+        <p>$16.00</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn minus">-</button>
+          <input type="number" class="quantity-input" value="1" min="1" max="6" />
+          <button class="quantity-btn plus">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button> 
+      </div>
+    </section>
+
+<!--newsletter-->
+    <section class="newsletter">
+      <h2>Subscribe to our newsletter and enjoy it!!</h2>
+      <p></p>
+      <form id="newsletterForm">
+        <input type="email" placeholder="Enter email" required/>
+        <button type="submit">Sign up</button>
+      </form>
+      <div id="subscribeMsg" style="color:#e27ca5;font-weight:bold;margin-top:.8em;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-section">
+      <h4>About Us</h4>
+      <a href="#" style="color:#a67d8d;">About Us</a><br>
+      <a href="#" style="color:#a67d8d;">Product Catalog</a><br>
+      <a href="#" style="color:#a67d8d;">Email us</a>
+    </div>
+  </footer>
+
+  <script src="mymarkweb.js"></script>
+</body>
+</html>
