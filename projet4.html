@@ -23,7 +23,7 @@
       </form>
       <div class="login-links">
         <a href="#" class="forgot-password">Forgot your password?</a>
-        <p>Don't have an account? <a href="#" class="sign-up">Sign up!</a></p>
+        <p>Don't have an account? <a href="#" class="sign-up" id="sign-up-link"  >Sign up!</a></p>
       </div>
       <div class="language-selector">
         <datalist id="language-options">
@@ -45,6 +45,66 @@
       
     </div>
   </section>
+   <!-- Sign Up  -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Create Account</h2>
+      <form class="modal-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button type="submit" class="modal-btn">CREATE ACCOUNT</button>
+      </form>
+      <div class="modal-footer">
+        <p>Already have an account? <a id="login-link">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    // Get modal element
+    const modal = document.getElementById('signup-modal');
+    
+    // Get link that opens the modal
+    const signUpLink = document.getElementById('sign-up-link');
+    
+    // Get link that closes the modal (from within the modal)
+    const loginLink = document.getElementById('login-link');
+    
+    // Get the close button element
+    const closeBtn = document.getElementsByClassName('close')[0];
+    
+    // Function to open modal
+    function openModal() {
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    // Function to close modal
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+    
+    // Listen for click on sign up link
+    signUpLink.addEventListener('click', openModal);
+    
+    // Listen for click on close button
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Listen for click on login link inside modal
+    loginLink.addEventListener('click', closeModal);
+    
+    // Close modal if user clicks outside of it
+    window.addEventListener('click', function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    });
+</script>
 
 </body>
 </html>

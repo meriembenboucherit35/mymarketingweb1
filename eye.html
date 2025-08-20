@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .contentwrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .textbox {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .textbox h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .textbox h2 {
+            font-size: 1.5rem;
+            color: #666;
+            margin: 20px 0;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .textbox h5 {
+            font-size: 1.2rem;
+            color: #a67d8d;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        
+        .shopbtn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(to right, #a67d8d, #c69fa9);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(166, 125, 141, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .shopbtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(166, 125, 141, 0.4);
+        }
+        
+        .imagebox {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .imagecontainer {
+            position: relative;
+            width: 100%;
+            height: 900px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .imagecontainer img{
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+        
+        /* Products section */
+        .products-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #a67d8d, #c69fa9);
+            border-radius: 2px;
+        }
+        
+        .products-columns {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .product-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(100, 30, 80, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: calc(25% - 25px);
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(100, 30, 80, 0.15);
+        }
+        
+        .product-image-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .videocontainer {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .productvideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e27ca5;
+            color: #fff;
+            font-size: 0.85em;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-weight: 600;
+        }
+        
+        .product-card h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #3a2222;
+            font-weight: 600;
+        }
+        
+        .series {
+            color: #a67d8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .price-container {
+            margin: 10px 0;
+        }
+        
+        .current-price {
+            color: #e27ca5;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+        
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .color-dot:hover {
+            border-color: #a67d8d;
+        }
+        
+        .color-dot.red { background-color: #e27ca5; }
+        .color-dot.pink { background-color: #f8b6c3; }
+        .color-dot.coral { background-color: #ff7f50; }
+        
+        .quantity-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            background: #f0f0f0;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        
+        .quantity-btn:hover {
+            background: #e0e0e0;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        
+        .add-to-cart {
+            padding: 12px 20px;
+            background: #e27ca5;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: auto;
+        }
+        
+        .add-to-cart:hover {
+            background: #b0567e;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .product-card {
+                width: calc(33.333% - 25px);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .contentwrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .textbox, .videobox {
+                width: 100%;
+                align-items: center;
+            }
+            
+            .textbox {
+                margin-bottom: 40px;
+            }
+            
+            .product-card {
+                width: calc(50% - 25px);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .product-card {
+                width: 100%;
+            }
+            
+            .textbox h1 {
+                font-size: 2.5rem;
+            }
+            
+            .textbox h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contentwrapper">
+        <div class="textbox">
+            <h5>WATERY TEXTURE GLOWY LIP PRODUCTS</h5>
+            <h1>Moisturizing + Glow</h1>
+            <h1>Worth It!</h1>
+            <h2>Make your LIPS glowy and HEALTHY AT THE SAME TIME</h2>
+            <a href="#" class="shopbtn">SHOP NOW!!</a>
+        </div>
+        
+        <div class="imagebox">
+            <div class="imagecontainer">
+                <img src="photosof models/646e0b31-7239-4740-bd0a-1e75716a4dd2.jpg" class="image" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="products-section">
+        <h2 class="section-title"> face Products</h2>
+        <div class="products-columns">
+            <div class="product-row">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="photosof models/Rom&nd Glasting Water Gloss 2 colors - $9_50.jpg" alt="Product 1"/>
+                        <div class="discount-badge">-15%</div>
+                    </div>
+                    <h3>Hydrating face mask</h3>
+                    <div class="series">Matte Finish Collection</div>
+                    <div class="color-options">
+                        <div class="color-dot red" title="Red"></div>
+                        <div class="color-dot pink" title="Pink"></div>
+                        <div class="color-dot coral" title="Coral"></div>
+                    </div>
+                    
+                    <div class="price-container">
+                        <span class="current-price">$12.00</span>
+                        <span class="original-price">$14.00</span>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="6" />
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="photosof models/f585e8ed-24fb-4341-8adb-c5b818a5733d.jpg" alt="Lip Product 2"/>
+                        <div class="discount-badge">-10%</div>
+                    </div>
+                    <h3>Lipstick</h3>
+                    <div class="series">Glossy Finish Collection</div>
+                    <div class="color-options">
+                        <div class="color-dot red" title="Red"></div>
+                        <div class="color-dot pink" title="Pink"></div>
+                        <div class="color-dot coral" title="Coral"></div>
+                    </div>
+                    <div class="price-container">
+                        <span class="current-price">$14.00</span>
+                        <span class="original-price">$15.50</span>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="6" />
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-row">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="photosof models/9.webp" alt=" lip Product 3"/>
+                        <div class="discount-badge">-20%</div>
+                    </div>
+                    <h3>Rich velvet color</h3>
+                    <div class="series">Velvet Finish Collection</div>
+                    <div class="color-options">
+                        <div class="color-dot red" title="Red"></div>
+                        <div class="color-dot pink" title="Pink"></div>
+                        <div class="color-dot coral" title="Coral"></div>
+                    </div>
+                    <div class="price-container">
+                        <span class="current-price">$13.00</span>
+                        <span class="original-price">$16.00</span>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="6" />
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="videocontainer">
+                        <video class="productvideo" src="photosof models/b0bc0e8627d9c060041ede034a19b606_720w.mp4" autoplay loop muted>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="discount-badge">-25%</div>
+                    </div>
+                    <h3>LIP Glow Tint</h3>
+                    <div class="series">Hydrating Collection</div>
+                    <div class="color-options">
+                        <div class="color-dot red" title="Red"></div>
+                        <div class="color-dot pink" title="Pink"></div>
+                        <div class="color-dot coral" title="Coral"></div>
+                    </div>
+                    <div class="price-container">
+                        <span class="current-price">$15.00</span>
+                        <span class="original-price">$20.00</span>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="6" />
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quantity controls functionality
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('.quantity-input');
+                let value = parseInt(input.value);
+                
+                if (this.classList.contains('minus')) {
+                    if (value > 1) input.value = value - 1;
+                } else {
+                    if (value < 6) input.value = value + 1;
+                }
+            });
+        });
+        
+        // Add to cart animation
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                this.textContent = 'Added!';
+                this.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    this.textContent = 'Add to Cart';
+                    this.style.background = '#e27ca5';
+                }, 1500);
+            });
+        });
+        
+        // Color selection
+        document.querySelectorAll('.color-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                this.parentElement.querySelectorAll('.color-dot').forEach(d => {
+                    d.style.borderColor = 'transparent';
+                });
+                this.style.borderColor = '#a67d8d';
+            });
+        });
+
+         // Function to handle Add to Cart button clicks
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default behavior
+            
+            // Get product info (you can customize this based on your needs)
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('h3').textContent;
+            const productPrice = productCard.querySelector('.current-price').textContent;
+            
+            // Store product info in sessionStorage to use on the cart page
+            sessionStorage.setItem('lastAddedProduct', JSON.stringify({
+                name: productName,
+                price: productPrice
+            }));
+            
+            // Redirect to cart page
+            window.location.href = 'cart.html'; // Change to your cart page URL
+        });
+    });
+    </script>
+</body>
+</html>
