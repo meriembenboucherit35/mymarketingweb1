@@ -107,7 +107,7 @@
             border-radius: 15px;
         }
         
-        /* Products section */
+        
         .products-section {
             width: 100%;
             max-width: 1200px;
@@ -464,7 +464,7 @@
     </div>
 
     <script>
-        // Quantity controls functionality
+        
         document.querySelectorAll('.quantity-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const input = this.parentElement.querySelector('.quantity-input');
@@ -478,7 +478,7 @@
             });
         });
         
-        // Add to cart animation
+        
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', function() {
                 this.textContent = 'Added!';
@@ -491,7 +491,7 @@
             });
         });
         
-        // Color selection
+        
         document.querySelectorAll('.color-dot').forEach(dot => {
             dot.addEventListener('click', function() {
                 this.parentElement.querySelectorAll('.color-dot').forEach(d => {
@@ -501,12 +501,11 @@
             });
         });
 
-         // Function to handle Add to Cart button clicks
+        
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault(); // Prevent default behavior
             
-            // Get product info (you can customize this based on your needs)
             const productCard = this.closest('.product-card');
             const productName = productCard.querySelector('h3').textContent;
             const productPrice = productCard.querySelector('.current-price').textContent;

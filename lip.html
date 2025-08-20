@@ -480,7 +480,7 @@
     </div>
 
     <script>
-        // Quantity controls functionality
+        
         document.querySelectorAll('.quantity-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const input = this.parentElement.querySelector('.quantity-input');
@@ -494,7 +494,7 @@
             });
         });
         
-        // Add to cart animation
+        
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', function() {
                 this.textContent = 'Added!';
@@ -507,7 +507,7 @@
             });
         });
         
-        // Color selection
+       
         document.querySelectorAll('.color-dot').forEach(dot => {
             dot.addEventListener('click', function() {
                 this.parentElement.querySelectorAll('.color-dot').forEach(d => {
@@ -517,24 +517,24 @@
             });
         });
 
-         // Function to handle Add to Cart button clicks
+         
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default behavior
+            e.preventDefault(); 
             
-            // Get product info (you can customize this based on your needs)
+            
             const productCard = this.closest('.product-card');
             const productName = productCard.querySelector('h3').textContent;
             const productPrice = productCard.querySelector('.current-price').textContent;
             
-            // Store product info in sessionStorage to use on the cart page
+            
             sessionStorage.setItem('lastAddedProduct', JSON.stringify({
                 name: productName,
                 price: productPrice
             }));
             
-            // Redirect to cart page
-            window.location.href = 'cart.html'; // Change to your cart page URL
+           
+            window.location.href = 'cart.html'; 
         });
     });
     </script>

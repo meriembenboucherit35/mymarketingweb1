@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - My Beauty Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .contact-container {
+      width: 100%;
+      max-width: 800px;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-title {
+      text-align: center;
+      color: #a67d8d;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .info-item i {
+      font-size: 24px;
+      color: #a67d8d;
+      margin-right: 15px;
+      min-width: 30px;
+    }
+
+    .info-content h3 {
+      color: #7c5d68;
+      margin-bottom: 5px;
+    }
+
+    .business-hours {
+      margin-top: 30px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed #eee;
+      padding-bottom: 8px;
+    }
+
+    .social-media {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-media h3 {
+      color: #a67d8d;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #a67d8d;
+      color: white;
+      border-radius: 50%;
+      font-size: 20px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      background: #7c5d68;
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        padding: 25px;
+      }
+      
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h2 class="contact-title">Contact My Beauty Shop</h2>
+    
+    <div class="contact-info">
+      <div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="info-content">
+            <h3>Our Location</h3>
+            <p>123 Beauty Avenue, Cosmetic District<br>Paris, France 75008</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <div class="info-content">
+            <h3>Phone Number</h3>
+            <p>+33 1 2345 6789<br>+33 6 1234 5678 (Mobile)</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div class="info-content">
+            <h3>Email Address</h3>
+            <p>benboucheritmeriem37@gmail.com<br>supportmybeautyshop@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <div class="info-content">
+            <h3>Business Hours</h3>
+            <div class="business-hours">
+              <div class="hours-row">
+                <span>Monday - Friday</span>
+                <span>9:00 AM - 8:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span>Saturday</span>
+                <span>10:00 AM - 7:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span>Sunday</span>
+                <span>11:00 AM - 5:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-media">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
